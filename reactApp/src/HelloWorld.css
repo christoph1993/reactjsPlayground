@@ -3,6 +3,12 @@
     text-align: center;
     background: black;
     color: white;
-    margin: 20px 20px 20px 210px;
+    margin: 20px;
     padding: 20px;
+}
+
+.GreetButton {
+    border: 0px;
+    color: red;
+    background: white;
 }
