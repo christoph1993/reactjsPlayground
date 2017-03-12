@@ -8,6 +8,7 @@ import App from './components/Greetings/index';
 import './index.css';
 
 ReactDOM.render(
-  <Routes history={browserHistory} />,
+//  <Routes history={browserHistory} />,
+  <App />,
   document.getElementById('root')
 );
