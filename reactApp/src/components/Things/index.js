@@ -7,6 +7,6 @@ export default class Things extends Component {
             <div className="Things">
                 Things will be here eventually
             </div>
-        )
+        );
     }
 }
