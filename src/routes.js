@@ -6,7 +6,7 @@ import countryPage from './components/countryPage';
 import notFound from './components/notFound';
 
 const routes = (
-    <Route path="/" component={Layout}>
+    <Route path="/" component={layout}>
         <IndexRoute component={home}/>
         <Route path="country/:id" component={countryPage}/>
         <Route path="*" component={notFound}/>

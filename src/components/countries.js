@@ -1,6 +1,6 @@
 import React from 'react';
 
-const countryInfo = {
+const countryInfo = [
     'Aus':{
         'id':'australia',
         'name': 'Australia',
@@ -16,6 +16,6 @@ const countryInfo = {
         'name':'Does Not Exist',
         'currency':'NA'
     }
-};
+];
 
 export default countryInfo;

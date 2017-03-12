@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
 import countries from './countries';
+import countryPreview from './countryPreview';
 
 export default class home extends React.Component{
     render() {
