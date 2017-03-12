@@ -1,0 +1,51 @@
+.form-control {
+    width: 50%;
+}
+
+.for-header {
+    padding-top: 51px;
+}
+
+.for-sidebar {
+    padding-left: 210px;
+}
+
+.for-sidebar-table {
+    display: none;
+    margin-left:210px;
+    width: 75%;
+}
+
+.clear-sale {
+    display: none;
+}
+
+@media(max-width:768px) {
+    .for-sidebar {
+        padding-left: 0px;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+
+    .for-sidebar-table {
+        margin-left: 0px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .for-sidebar.toggled {
+        padding-left: 210px;
+    }
+
+    .for-sidebar-table.toggled {
+        margin-left: 210px;
+    }
+
+    .row-remove, .sale-remove {
+        display:none;
+    }
+}
