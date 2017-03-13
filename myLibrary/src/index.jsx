@@ -13,11 +13,11 @@ import AddBook from './component/books/addbook.component.jsx';
 /* Routing goes here */
 render(
     <Router history={browserHistory}>
-        <Route path="/" Component={Main}>
-            <IndexRoute Component={Home} />
-            <Route path="/books" Component={Books} />
-            <Route path="/addBook" Component={AddBook} />
-            <Route path="/about" Component={About} />
+        <Route component={Main}>
+            <Route path="/" component={Home}/>
+            <Route path="/books" component={Books}/>
+            <Route path="/addbook" component={AddBook}/>
+            <Route path="/about" component={About}/>
         </Route>
     </Router>,
     document.getElementById('container')

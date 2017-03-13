@@ -4,7 +4,7 @@ class AddBook extends Component {
     render() {
         return (
             <h1>AddBook Page Here</h1>
-        );
+        )
     }
 }
 
