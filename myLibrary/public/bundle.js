@@ -12779,16 +12779,35 @@ var AddBookForm = function (_Component) {
     }, {
         key: 'handleRecommend',
         value: function handleRecommend(e) {
-            this.setState({ recommendation: e.target.value });
+            this.setState({ recommendation: [e.target.value] });
+            console.log(this.state.recommendation);
         }
     }, {
         key: 'handleFormSubmit',
         value: function handleFormSubmit(e) {
             //Function to handle form submission
             e.preventDefault();
-            //Set up form-payload here...
-            //Send form-payload via post here...
-            //Want to clear form after submission
+
+            var formPayload = {
+                authorName: this.state.authorName,
+                bookTitle: this.state.bookTitle,
+                ISBN: this.state.ISBN,
+                myCurrentReadLevel: this.state.myCurrentReadLevel,
+                bookDetails: this.state.bookDetails,
+                recommendation: this.state.recommendation
+            };
+
+            fetch('/addbooks', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formPayload)
+            });
+
+            console.log(formPayload); //Replace with actual POST request. Probably just use AJAX...
+
             this.handleClearForm(e);
         }
     }, {
@@ -12871,7 +12890,7 @@ var AddBookForm = function (_Component) {
                 _react2.default.createElement('input', { type: 'submit', className: 'btn btn-primary', value: 'Submit', onClick: this.handleFormSubmit }),
                 _react2.default.createElement(
                     'button',
-                    { className: 'btn', onClick: this.handleClearForm },
+                    { className: 'btn', style: { paddingLeft: '10px' }, onClick: this.handleClearForm },
                     'Clear Form'
                 )
             );
@@ -12911,7 +12930,7 @@ var CheckboxRadioButton = function CheckboxRadioButton(props) {
         ),
         _react2.default.createElement(
             "div",
-            { className: "checkbox-group" },
+            { className: "checkbox-group form-group" },
             props.options.map(function (option) {
                 return _react2.default.createElement(
                     "label",
@@ -13022,7 +13041,8 @@ var TextArea = function TextArea(props) {
         _react2.default.createElement(
             "label",
             { className: "form-label" },
-            props.title
+            props.title,
+            ":"
         ),
         _react2.default.createElement("textarea", {
             className: "form-input",
@@ -13071,7 +13091,8 @@ var TextInput = function TextInput(props) {
         _react2.default.createElement(
             "label",
             { className: "form-label" },
-            props.title
+            props.title,
+            ":"
         ),
         _react2.default.createElement("input", {
             className: "form-input",

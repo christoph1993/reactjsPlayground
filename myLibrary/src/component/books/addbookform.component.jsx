@@ -58,15 +58,34 @@ class AddBookForm extends Component {
 
     //Handle recommendation
     handleRecommend(e) {
-        this.setState({ recommendation: e.target.value });
+        this.setState({ recommendation: [e.target.value] });
+        console.log(this.state.recommendation);
     }
 
     handleFormSubmit(e) {
         //Function to handle form submission
         e.preventDefault();
-        //Set up form-payload here...
-        //Send form-payload via post here...
-        //Want to clear form after submission
+        
+        const formPayload = {
+            authorName: this.state.authorName,
+            bookTitle: this.state.bookTitle,
+            ISBN: this.state.ISBN,
+            myCurrentReadLevel: this.state.myCurrentReadLevel,
+            bookDetails: this.state.bookDetails,
+            recommendation: this.state.recommendation
+        }
+
+        fetch('/addbooks', {
+            method: 'POST',
+            headers: {
+                'Accept':'application/json',
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify(formPayload)
+        });
+
+        console.log(formPayload);//Replace with actual POST request. Probably just use AJAX...
+
         this.handleClearForm(e)
     }
 
@@ -145,7 +164,7 @@ class AddBookForm extends Component {
                     controlFunction={this.handleRecommend}
                 />
                 <input type="submit" className="btn btn-primary" value="Submit" onClick={this.handleFormSubmit} />
-                <button className="btn" onClick={this.handleClearForm}>Clear Form</button>
+                <button className="btn" style={{paddingLeft:'10px'}} onClick={this.handleClearForm}>Clear Form</button>
             </form>
         );
     }

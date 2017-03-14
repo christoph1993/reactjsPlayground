@@ -2,7 +2,7 @@ import React from 'react';
 
 const TextInput = (props) => (
     <div className="form-group">
-        <label className="form-label">{props.title}</label>
+        <label className="form-label">{props.title}:</label>
         <input
             className="form-input"
             name={props.name}

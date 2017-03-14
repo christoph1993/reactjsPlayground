@@ -3,7 +3,7 @@ import React from 'react';
 const CheckboxRadioButton = (props) => (
     <div>
         <label className="form-label">{props.title}</label>
-        <div className="checkbox-group">
+        <div className="checkbox-group form-group">
             {props.options.map(option => {
                 return(
                     <label key={option} className="form-label">
