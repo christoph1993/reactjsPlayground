@@ -23,7 +23,7 @@ const CheckboxRadioButton = (props) => (
 
 CheckboxRadioButton.propTypes = {
     title: React.PropTypes.string.isRequired,
-    type: React.PropTypes.onOf(['checkbox', 'radio']).isRequired,
+    type: React.PropTypes.oneOf(['checkbox', 'radio']).isRequired,
     setName: React.PropTypes.string.isRequired,
     options: React.PropTypes.array.isRequired,
     selectedOptions: React.PropTypes.array,

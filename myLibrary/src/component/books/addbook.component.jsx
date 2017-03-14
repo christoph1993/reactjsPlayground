@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import AddBookForm from './addbookform.component.jsx';
 
 class AddBook extends Component {
     render() {
         return (
-            <h1>AddBook Page Here</h1>
+            <div>
+                <h1>AddBook Page Here</h1>
+                <AddBookForm />
+            </div>
         )
     }
 }
